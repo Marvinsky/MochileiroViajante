@@ -13,19 +13,10 @@
 #include <conio.h>
 #include <math.h>
 #include <fstream>
-#include <locale>
 
 #include "Mochileiro.h"
 
 #include <vector>
-
-template<class charT, charT sep>
-class punct_facet: public std::numpunct<charT> {
-protected:
-	charT do_decimal_point() const {
-		return sep;
-	}
-};
 
 class SA {
 private:
