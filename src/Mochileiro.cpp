@@ -465,6 +465,8 @@ void Mochileiro::carregarTodo(char caminhoArq[], char saidaArq[]) {
 			"C:\\Users\\Marvin\\Desktop\\Metaheuristica\\resultado\\resultado2.txt";
 	ofstream arq(saidaArq);
 	ofstream arq2opt(saida2opt);
+	std::cout.imbue(
+			std::locale(std::cout.getloc(), new punct_facet<char, ','>));
 	arq << "Resultados : \n";
 	for (int i = 0; i < totalInstancias; i++) {
 		file >> instancia;
@@ -497,8 +499,9 @@ void Mochileiro::carregarTodo(char caminhoArq[], char saidaArq[]) {
 		M.setItems(C.getX());
 		double result = M.resultadoFinal();
 		//cout << instancia << " : " << result << "\n";
-		//double doisopt = M.DoisOpt();
+		//double doisopt = M.DoisOpt(); If it is applied the new solution will be optimal.
 		//cout << instancia << " : " << doisopt << "\n";
+
 		arq << "\n";
 		arq << result;
 		//arq << "\n";
@@ -529,12 +532,13 @@ void Mochileiro::carregarTodo(char caminhoArq[], char saidaArq[]) {
 		//double simulatingAnnealing = s.simulatedAnnealing();
 		//cout << instancia << " : " << simulatingAnnealing << endl;
 		double ILS = s.ILS();
-		cout << instancia << ":" << ILS << endl;
-
+		//cout << instancia << ":" << ILS << endl;
+		//std::cout << "My age is " << 3.1415 << " lightyears.\n";
+		cout << ILS << endl;
 		double max = ILS;
 		media2.insert(media2.begin() + i, max);
 		counter2++;
-		cout << "Optimum = " << max << endl;
+		//cout << "Optimum = " << max << endl;
 		//arq << "Optimum = ";
 		arq2opt << max;
 		//arq << "\n";
@@ -548,7 +552,7 @@ void Mochileiro::carregarTodo(char caminhoArq[], char saidaArq[]) {
 				suma2 += media2.at(i);
 			}
 			m2 = suma2 / 10;
-			cout << "media = " << m2 << endl;
+			cout << "La media es = " << m2 << endl;
 			arq2opt << "\n";
 			arq2opt << "media = ";
 			arq2opt << m2;

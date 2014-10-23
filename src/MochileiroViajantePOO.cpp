@@ -17,7 +17,7 @@ int main() {
 
 	Mochileiro M;
 	char entrada[] =
-			"C:\\Users\\Marvin\\Desktop\\Metaheuristica\\instanciastotales.txt";
+			"C:\\Users\\Marvin\\Desktop\\Metaheuristica\\instanciasParte2.txt";
 	char saida[] =
 			"C:\\Users\\Marvin\\Desktop\\Metaheuristica\\resultado\\resultado2.txt";
 	M.carregarTodo(entrada, saida);
@@ -331,39 +331,5 @@ int main() {
 		cout << "Dois opt = " << doisOpt << endl;
 	}
 
-	//###########Método constructivo##########
-	//###########Greddy Algorithm for mochila && caixeiro##############
-
-	/*
-	 Mochila C;
-	 C.setItems(M.getItems());
-	 C.setNroitems(M.getNroitems());
-	 C.setCapacidadMochile(M.getCapacity());
-	 C.setMatrixItems(M.getMatrixItems());
-	 C.Init();
-	 C.escogerItemsValiosos();
-
-	 Caixeiro X;
-	 X.setNroidades(M.getNrocities());
-	 X.setCidades(M.getCities());
-	 X.setMatrixCidades(M.getMatrixCidades());
-	 X.init();
-	 X.escogerLaMenorDistancia();
-
-	 M.setCities(X.getCitiesGreedy());
-	 M.setItems(C.getX());
-	 cout << M.getCities().size() << endl;
-	 cout << M.getItems().size() << endl;
-
-	 cout << "Resultado final 2 = " << M.resultadoFinal() << endl;
-	 */
-
-	/*SA s;
-	 s.setNroidades(M.getNrocities());
-	 s.setCidades(M.getCities());
-	 s.setMatrixCidades(M.getMatrixCidades());
-	 s.setNroIterations(1000);
-	 s.simulatedAnnealing();
-	 */
 	return 0;
 }
